@@ -23,11 +23,14 @@ margin: 0 auto;
 }
 
 @media (max-width: 64em) {
+  width: 100%;
+  /* align-self: flex-end; */
 .desktop{
   display: none;
 }
 .mobile{
   display: inline-block;
+  
 }
 
 }
@@ -71,7 +74,7 @@ touch-action: none;
 
 const MenuItem = styled.li`
 margin: 0 1rem;
-color: ${props => props.theme.text};
+color: ${props => props.theme.textBlack};
 cursor: pointer;
 font-size: ${props => props.theme.fontlg};
 
@@ -141,8 +144,6 @@ transition: all 0.3s ease;
   bottom: ${props => props.click ? '0.3rem' : '0.5rem'};
   transform: ${props => props.click ? 'rotate(40deg)' : 'rotate(0)'  };
 }
-
-
 `
 
 
@@ -180,12 +181,12 @@ const scrollTo = (id) => {
           <MenuItem onClick={() => scrollTo('faq')}  >Faq</MenuItem>
           <MenuItem>
             <div className="mobile">
-            <Button text="Connect Wallet" link="https://google.com" />
+            <Button text="Join Waitlist" link="https://google.com" />
             </div>
           </MenuItem>
         </Menu>
           <div className="desktop">
-          <Button text="Connect Wallet" link="https://google.com" />
+          <Button text="Join Waitlist" link="#" />
           </div>
 
       </NavBar>

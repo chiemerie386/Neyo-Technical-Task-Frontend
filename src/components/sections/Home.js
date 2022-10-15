@@ -68,8 +68,10 @@ img{
   width: 4rem;
   height: 4rem;
   left: none;
-  right: 2rem;
-  bottom: 100%;
+  /* right: 2rem;
+  bottom: 100%; */
+  bottom: 1rem;
+left: 5%;
 }
 @media (max-width: 48em) {
   
@@ -114,6 +116,7 @@ const Home = () => {
           <TypeWriterText /></Suspense>
         </Box>
         <Box>
+          
         <Suspense fallback={<Loading />}>
           <CoverVideo /></Suspense>
           
