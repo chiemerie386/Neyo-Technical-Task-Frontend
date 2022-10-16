@@ -10,8 +10,8 @@ const Section = styled.section`
 min-height: 100vh;
 height: auto;
 width: 100vw;
-background-color: ${props => props.theme.purple};
-background-image: url( ${bg});
+background-color: ${props => props.theme.textBlack};
+/* background-image: url( ${bg}); */
 position: relative;
 color: ${(props) => props.theme.body};
 overflow: hidden;
@@ -23,16 +23,16 @@ align-items: center;
 flex-direction: column;
 `
 const Title = styled.h1`
-  font-size: ${(props) => props.theme.fontxxl};
-  text-transform: uppercase;
+  font-size: 2rem;
+  font-family:  "Circular Pro", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;;
   color: ${(props) => props.theme.body};
   
   margin: 1rem auto;
-  border-bottom: 2px solid ${(props) => props.theme.carouselColor};
+  /* border-bottom: 2px solid ${(props) => props.theme.carouselColor}; */
   width: fit-content;
 
   @media (max-width: 48em){
-  font-size: ${(props) => props.theme.fontxl};
+  font-size: ${(props) => props.theme.fontmd};
 
   }
 `;
@@ -97,7 +97,7 @@ useLayoutEffect(() => {
 
   return (
     <Section ref={ref} id="faq">
-    <Title>Faq</Title>
+    <Title>Frequently asked questions</Title>
 
     <Container>
 

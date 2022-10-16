@@ -17,12 +17,17 @@ min-height: 100vh;
 width: 100vw;
 background-color: ${props => props.theme.body};
 position: relative;
-color: ${(props) => props.theme.text};
+color: ${(props) => props.theme.textBlack};
 
 display: flex;
 /* justify-content: center; */
 /* align-items: center; */
 flex-direction: column;
+border-bottom-right-radius: 25% ;
+@media (max-width: 48em) {
+  border-bottom-right-radius: 45% ;
+  min-height: 70vh;
+}
 `
 
 const Container = styled.div`
@@ -33,7 +38,7 @@ justify-content: space-between;
 align-items: center;
 font-size: ${props => props.theme.fontlg};
 
-border-bottom: 1px solid ${(props) => props.theme.text};
+border-bottom: 1px solid ${(props) => props.theme.textBlack};
 
 @media (max-width: 48em) {
 width: 90%;

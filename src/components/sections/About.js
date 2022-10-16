@@ -24,6 +24,7 @@ align-items: center;
 position: relative;
 overflow: hidden;
 
+
 `
 const Container = styled.div`
 width: 75%;
@@ -69,8 +70,9 @@ align-items: center;
  
 const Title = styled.h2`
   font-size: ${(props) => props.theme.fontxxl};
+  font-family:  "Circular Pro", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;;
   text-transform: capitalize;
-  color: ${(props) => props.theme.text};
+  color: ${(props) => props.theme.body};
   align-self: flex-start;
   width: 80%;
 margin: 0 auto;
@@ -90,9 +92,9 @@ margin: 0 auto;
 `
 const SubText = styled.p`
   font-size: ${(props) => props.theme.fontlg};
-  color: ${(props) => props.theme.body};
+color: hsla(0, 0%, 100%, 0.8);
   font-weight: 350;
-  font-family: "DM Sans", sans-serif;
+  font-family: "Circular Pro", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
   align-self: flex-start;
   width: 80%;
 margin: 1rem auto;
@@ -113,30 +115,7 @@ margin: 1rem auto;
 }
 
 `
-const SubTextLight = styled.p`
-  font-size: ${(props) => props.theme.fontmd};
-  color: ${(props) => `rgba(${props.theme.bodyRgba},0.6)`};
-  align-self: flex-start;
-  width: 80%;
-margin: 1rem auto;
-font-weight:400;
 
-@media (max-width: 64em){
-  width: 100%;
-  text-align:center;
-  font-size: ${(props) => props.theme.fontsm};
-
-}
-@media (max-width: 40em){
-  font-size: ${(props) => props.theme.fontsm};
-
-}
-@media (max-width: 30em){
-  font-size: ${(props) => props.theme.fontxs};
-
-}
-
-`
 const ButtonContainer = styled.div`
  width: 80%;
  margin: 1rem auto;
@@ -171,9 +150,7 @@ const About = () => {
         With more than 200+ hand drawn traits, each NFT is unique and comes with a membership to an exclusive group of successful investors. Join an ambitious ever-growing community with multiple benefits and utilities.
         </SubTextLight> */}
         <ButtonContainer>
-        <ThemeProvider theme={dark}>
-        <Button text="JOIN OUR WAITLIST" link="https://google.com" />
-        </ThemeProvider>
+        <Button text="Join Our Waitlist" link="#" />
         </ButtonContainer>
          </Box>
       </Container>

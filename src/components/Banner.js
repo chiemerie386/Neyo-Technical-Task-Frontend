@@ -147,7 +147,7 @@ const Banner = () => {
             <img width={500} height={400}  src={img6} alt="The Weirdos" />
 
         </ImgContainer>
-        <Title>Join Tai Tribe  </Title>
+        <Title>Join The Tai Tribe  </Title>
         <BtnContainer>
         <a href="#" aria-label={"Join Now"} target="_blank" rel="noreferrer" >
         <JoiNow>

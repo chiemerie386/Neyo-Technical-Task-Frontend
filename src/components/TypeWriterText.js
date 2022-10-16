@@ -4,22 +4,24 @@ import Typewriter from "typewriter-effect";
 import Button from './Button';
 
 const Title = styled.h2`
-  font-size: 4rem;
-  font-family: "DM Sans", sans-serif;
+  font-size: 70px;
+  font-family:  "Circular Pro", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;;
   font-weight: '900';
   text-transform: capitalize;
   width: 70%;
-  color: ${(props) => props.theme.text};
+  color: ${(props) => props.theme.textBlack};
   align-self: flex-start;
+  margin-bottom: 10px;
   
 
   @media (max-width: 70em) {
-    font-size: ${(props) => props.theme.fontxl};
+    font-size: 42px;
 
   }
   @media (max-width: 48em) { 
     align-self: center;
     text-align:center;
+    font-size: 34px;
   }
   @media (max-width: 40em){
     width: 90%;
@@ -31,20 +33,20 @@ const Typing = styled.h2`
   font-size: 2rem;
   text-transform: capitalize;
   width: 80%;
-  /* color: ${(props) => props.theme.text}; */
+  color: ${(props) => props.theme.text};
   align-self: flex-start;
 span {
     text-transform: uppercase;
     font-family: "Akaya Telivigala", cursive;
   }
   .text-1{
-      color:  black;
+    color: ${(props) => props.theme.text};
   }
   .text-2{
-      color: black;
+    color: ${(props) => props.theme.purple};
   }
   .text-3{
-      color: black;
+    color: ${(props) => props.theme.text};
   }
   @media (max-width: 70em) {
     font-size: ${(props) => props.theme.fontxl};
@@ -61,9 +63,10 @@ span {
 `;
 const SubTitle = styled.h3`
   font-size: ${(props) => props.theme.fontlg};
+  font-family: "Circular Pro", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
   text-transform: capitalize;
-  color: ${props => `rgba(${props.theme.textBlack}, 0.4)`};
-  font-weight:600;
+  color: ${props => props.theme.textBlack};
+  font-weight:400;
   margin-bottom: 1rem;
   width: 80%;
   align-self: flex-start;
@@ -87,8 +90,8 @@ margin-top: 2rem;
 
 
   @media (max-width: 48em) { 
-    align-self: center;
-    text-align:center;
+
+    justify-content: center;
     button{
       margin: 0 auto;
     }
@@ -96,9 +99,10 @@ margin-top: 2rem;
 `
 const ButtonContainer = styled.img`
  width: 35%;
-  margin-right: 10px;
+  margin-right: 15px;
 
   @media (max-width: 48em) { 
+    width: 40%;
     align-self: center;
     text-align:center;
     button{
@@ -125,10 +129,10 @@ const TypeWriterText = () => {
             .typeString(`<span class="text-1">Earn income while gaming.</span>`)
             .pauseFor(2000)
             .deleteAll()
-            .typeString(`<span class="text-2">Secure crypto wallet system</span>`)
+            .typeString(`<span class="text-2">Secure crypto wallet.</span>`)
             .pauseFor(2000)
             .deleteAll()
-            .typeString(`<span class="text-3">Safe community chatting system.</span>`)
+            .typeString(`<span class="text-3">Safe community chatting.</span>`)
             .pauseFor(2000)
             .deleteAll()
             .start();
@@ -136,8 +140,8 @@ const TypeWriterText = () => {
       /> 
 </Typing>
 <ButtonHolder>
+<ButtonContainer src={require('../assets/button2.png')} />
 <ButtonContainer src={require('../assets/button.png')} />
-    <ButtonContainer src={require('../assets/button2.png')} />
 </ButtonHolder>
     {/* <Button text="Explore" link="https://google.com" /> */}
     {/* <img  /> */}
