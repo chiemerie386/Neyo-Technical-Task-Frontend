@@ -144,25 +144,25 @@ const Footer = () => {
     <Left> 
     <Logo />
     <IconList>
-      <a href="http://facebook.com" target='_blank' 
+      <a href="#" target='_blank' 
       rel="noopener noreferrer"
       aria-label='facebook'
       >
         <Facebook />
       </a>
-      <a href="https://www.instagram.com/code.bucks/" target='_blank' 
+      <a href="#" target='_blank' 
       rel="noopener noreferrer"
       aria-label='instagram'
       >
         <Instagram />
       </a>
-      <a href="https://twitter.com/code_bucks" target='_blank' 
+      <a href="#" target='_blank' 
       rel="noopener noreferrer"
       aria-label='twitter'
       >
         <Twitter />
       </a>
-      <a href="http://linkedin.com" target='_blank' 
+      <a href="#" target='_blank' 
       rel="noopener noreferrer"
       aria-label='linkedin'
       >
@@ -174,20 +174,19 @@ const Footer = () => {
     <Item onClick={() => scrollTo('home')}  >Home</Item>
           <Item onClick={() => scrollTo('about')}  >About</Item>
           <Item onClick={() => scrollTo('roadmap')}  >Roadmap</Item>
-          <Item onClick={() => scrollTo('showcase')}  >Showcase</Item>
-          <Item onClick={() => scrollTo('team')}  >Team</Item>
+          {/* <Item onClick={() => scrollTo('showcase')}  >Showcase</Item> */}
+          {/* <Item onClick={() => scrollTo('team')}  >Team</Item> */}
           <Item onClick={() => scrollTo('faq')}  >Faq</Item>
 
     </MenuItems>
       </Container>
       <Bottom>
         <span>
-          &copy; {new Date().getFullYear()} Weirdos Club. All rights reserved.
+          &copy; {new Date().getFullYear()} Tai Guild Games
         </span>
         <span>
-          Made with &#10084; by <a href="http://youtube.com/codebucks" target="_blank"  rel="noopener noreferrer">
-            CodeBucks
-          </a>
+      
+          
         </span>
       </Bottom>
     </Section>

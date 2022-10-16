@@ -37,6 +37,16 @@ align-items: center;
   }
 }
 `
+const Box1 = styled.div`
+
+width: 50%;
+height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+`
+
 const Box = styled.div`
 width: 50%;
 height: 100%;
@@ -111,12 +121,12 @@ const Home = () => {
   return (
     <Section id="home">
       <Container>
-      <Box>
+      <Box1>
         <Suspense fallback={<Loading />}>
           <TypeWriterText /></Suspense>
-        </Box>
+        </Box1>
         <Box>
-          
+
         <Suspense fallback={<Loading />}>
           <CoverVideo /></Suspense>
           

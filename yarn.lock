@@ -1235,6 +1235,11 @@
   resolved "https://registry.yarnpkg.com/@fontsource/akaya-telivigala/-/akaya-telivigala-4.5.8.tgz#51a489d7616847c37e327edac31d718ac1d7702c"
   integrity sha512-EsKYaLE+O27wnExLfwLKdG6Xj+YSCG9kNaUEWZUarFYyX53LKBY44CRc4KEwE2S2zdzVNtddIe0k4KmIWKXT2w==
 
+"@fontsource/dm-sans@^4.5.9":
+  version "4.5.9"
+  resolved "https://registry.yarnpkg.com/@fontsource/dm-sans/-/dm-sans-4.5.9.tgz#a48f9c815728ebb47e1c58e5176a9d4aa6cb25ea"
+  integrity sha512-qaFvSBJhoeley1A9myRUUuHbm9sz7ADyC2WodezBzdFSPs2VD/p5WPPwtpVE8b1SglQrOPAnxA7s3fH5zOtiMQ==
+
 "@fontsource/sora@^4.5.3":
   version "4.5.10"
   resolved "https://registry.yarnpkg.com/@fontsource/sora/-/sora-4.5.10.tgz#46554a5a7bbbaa16657398f4071523228c44064a"

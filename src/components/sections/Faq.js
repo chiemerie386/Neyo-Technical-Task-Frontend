@@ -3,13 +3,15 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 import React, { useLayoutEffect, useRef } from 'react'
 import styled from 'styled-components';
 import Accordion from '../Accordion';
+import bg from "../../assets/Tai_bg.svg"
 
 
 const Section = styled.section`
 min-height: 100vh;
 height: auto;
 width: 100vw;
-background-color: ${props => props.theme.text};
+background-color: ${props => props.theme.purple};
+background-image: url( ${bg});
 position: relative;
 color: ${(props) => props.theme.body};
 overflow: hidden;
@@ -100,24 +102,25 @@ useLayoutEffect(() => {
     <Container>
 
 <Box>
-  <Accordion ScrollTrigger={ScrollTrigger} title="WHERE CAN I VIEW MY NFTS?" >
-  Once minted or bought simply connect to your OpenSea account to view your NFTs.
+  <Accordion ScrollTrigger={ScrollTrigger} title=" How can I get to play the games and do I have to pay anything?" >
+ 
+  By registering with Tai Guild Games as a scholar. We then facilitate a brief training then allocate login in details and you good to go. What is amazing is all this is free!
   </Accordion>
-  <Accordion ScrollTrigger={ScrollTrigger} title="WHAT IS THE METAVERSE?" >
-  A metaverse is a network of 3D virtual worlds focused on social connection. In futurism and science fiction, it is often described as a hypothetical iteration of the Internet as a single, universal virtual world that is facilitated by the use of virtual and augmented reality headsets.
+  <Accordion ScrollTrigger={ScrollTrigger} title="Will I be assisted on how to play the games and how to convert the Cryptocurrency into my local currency?" >
+  Yes, Tai Guild Games game masters will be available to help scholars learn how to play the various games on selection. Tech teams will be available around the clock to assist with any technical issues that may arise.
 
   </Accordion>
-  <Accordion ScrollTrigger={ScrollTrigger} title="WHY DO WE NEED ROYALTIES?" >
-  The amount of royalties was fixed at 5% to finance the Weirdos Club's projects. We have the ambition to organize multiple events around the world in order to strengthen the community and build a network of entrepreneurs and investors with the same mindset and common interests.
+  <Accordion ScrollTrigger={ScrollTrigger} title="What does Play2Earn mean?" >
+  Just as the name suggest, one earns money by playing the blockchain games.
   </Accordion>
 </Box>
 <Box>
-<Accordion ScrollTrigger={ScrollTrigger} title="HOW CAN I USE MY NFT?" >
-You will be able to use your NFT as an avatar in the Metaverse and our future video game. Holding also means that you are part of an exclusive network of investors and entrepreneurs.
+<Accordion ScrollTrigger={ScrollTrigger} title="How does it work and how do I get paid?" >
+During game play one earns Tokens which are actual cryptocurrencies. The number of Tokens one earns through wins or completing tasks are later redeemed for actual fiat currency like US Dollars or one’s local currency.
   </Accordion>
-  <Accordion ScrollTrigger={ScrollTrigger} title="WHAT ARE THE WEIRDOS?
+  <Accordion ScrollTrigger={ScrollTrigger} title="What other benefits do I get apart from earning money?
 " >
-Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore deserunt consequatur quisquam maxime molestias dolores ipsum, exercitationem vel sint quidem aliquam modi quis impedit corporis unde inventore fugiat provident in.
+Aside from been part of an awesome family, there will be competitions where ace players will receive cash rewards. Once the DAO is fully rolled out, holders of $TGG Token will participate in decision making.
   </Accordion>
   <Accordion ScrollTrigger={ScrollTrigger} title="WHAT IS THE FUSION PROCESS?
 " >

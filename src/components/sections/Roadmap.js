@@ -49,6 +49,7 @@ const SvgContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: red;
 `;
 
 const Items = styled.ul`
@@ -127,7 +128,7 @@ const ItemContainer = styled.div`
 
 const Box = styled.p`
   height: fit-content;
-  background-color: ${(props) => props.theme.carouselColor};
+  background-color: ${(props) => props.theme.textBlack};
   color: ${(props) => props.theme.text};
   padding: 1rem;
   position: relative;
@@ -137,7 +138,7 @@ const SubTitle = styled.span`
   display: block;
   font-size: ${(props) => props.theme.fontxl};
   text-transform: capitalize;
-  color: ${(props) => props.theme.text};
+  color: ${(props) => props.theme.body};
 
   @media (max-width: 40em) {
     font-size: ${(props) => props.theme.fontlg};
@@ -148,7 +149,7 @@ const Text = styled.span`
   display: block;
   font-size: ${(props) => props.theme.fontsm};
   text-transform: capitalize;
-  color: ${(props) => props.theme.text};
+  color: ${(props) => props.theme.body};
 
   font-weight: 400;
   margin: 0.5rem 0;
@@ -220,27 +221,27 @@ const Roadmap = () => {
           <Item>&nbsp;</Item>
           <RoadMapItem
             addToRef={addToRefs}
-            title="Grand Opening"
+            title="Q4  |2022"
             subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat."
           />
           <RoadMapItem
             addToRef={addToRefs}
-            title="Great Benefits"
+            title="Q1  |2023"
             subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat."
           />
           <RoadMapItem
             addToRef={addToRefs}
-            title="Early Access"
+            title="Q2  |2023"
             subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat."
           />
           <RoadMapItem
             addToRef={addToRefs}
-            title="New Merch"
+            title="Q3  |2023"
             subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat."
           />
           <RoadMapItem
             addToRef={addToRefs}
-            title="Holders Ranking"
+            title="Q4  |2023"
             subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat."
           />
         </Items>

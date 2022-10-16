@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import img1 from '../assets/Nfts/bighead.svg';
-import img2 from '../assets/Nfts/bighead-1.svg';
-import img3 from '../assets/Nfts/bighead-2.svg';
-import img4 from '../assets/Nfts/bighead-3.svg';
-import img5 from '../assets/Nfts/bighead-4.svg';
-import img6 from '../assets/Nfts/bighead-5.svg';
+import img1 from '../assets/gamers/ahri_card.png';
+import img2 from '../assets/gamers/akali_card.png';
+import img3 from '../assets/gamers/ashe_card.png';
+import img4 from '../assets/gamers/Champion_garen_HP.png';
+import img5 from '../assets/gamers/fortune_card.png';
+import img6 from '../assets/gamers/lux_card.png';
 
 const Section = styled.section`
 width: 100vw;
@@ -15,7 +15,7 @@ position: relative;
 border-top: 2px solid ${props => props.theme.text};
 border-top: 2px solid ${props => props.theme.text};
 
-background-color: ${props => `rgba(${props.theme.textRgba},0.9)`};
+background-color: ${props => props.theme.textBlack};
 
 display: flex;
 justify-content: center;
@@ -147,9 +147,9 @@ const Banner = () => {
             <img width={500} height={400}  src={img6} alt="The Weirdos" />
 
         </ImgContainer>
-        <Title>Join the  <br /> weirdos club  </Title>
+        <Title>Join Tai Tribe  </Title>
         <BtnContainer>
-        <a href="https://www.discord.com" aria-label={"Join Now"} target="_blank" rel="noreferrer" >
+        <a href="#" aria-label={"Join Now"} target="_blank" rel="noreferrer" >
         <JoiNow>
             Join Now
         </JoiNow>

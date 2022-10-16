@@ -7,6 +7,7 @@ export const light = {
     textBlack:"#091B27", //
     bodyRgba : "255, 255, 255",
     textRgba:"32,32,32",
+    purple: '#5943A5',
 
     carouselColor: '#EEEDDE',
 
@@ -21,7 +22,7 @@ export const light = {
     fontButton:'0.875em',
 
 
-    navHeight: '6.7rem',
+    navHeight: '6.5rem',
 }
 
 

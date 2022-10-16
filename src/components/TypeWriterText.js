@@ -4,10 +4,11 @@ import Typewriter from "typewriter-effect";
 import Button from './Button';
 
 const Title = styled.h2`
-  font-size: ${(props) => props.theme.fontxxl};
-  font-weight: bold;
+  font-size: 4rem;
+  font-family: "DM Sans", sans-serif;
+  font-weight: '900';
   text-transform: capitalize;
-  width: 80%;
+  width: 70%;
   color: ${(props) => props.theme.text};
   align-self: flex-start;
   
@@ -37,13 +38,13 @@ span {
     font-family: "Akaya Telivigala", cursive;
   }
   .text-1{
-      color:  purple;
+      color:  black;
   }
   .text-2{
       color: black;
   }
   .text-3{
-      color: blue;
+      color: black;
   }
   @media (max-width: 70em) {
     font-size: ${(props) => props.theme.fontxl};
@@ -78,10 +79,24 @@ const SubTitle = styled.h3`
   }
   
 `
+const ButtonHolder = styled.div`
+display: flex;
+justify-content: flex-start;
+align-items: center;
+margin-top: 2rem;
 
-const ButtonContainer = styled.div`
- width: 80%;
-  align-self: flex-start;
+
+  @media (max-width: 48em) { 
+    align-self: center;
+    text-align:center;
+    button{
+      margin: 0 auto;
+    }
+  }
+`
+const ButtonContainer = styled.img`
+ width: 35%;
+  margin-right: 10px;
 
   @media (max-width: 48em) { 
     align-self: center;
@@ -120,9 +135,13 @@ const TypeWriterText = () => {
         }}
       /> 
 </Typing>
-    <ButtonContainer>
-    <Button text="Explore" link="https://google.com" />
-    </ButtonContainer>
+<ButtonHolder>
+<ButtonContainer src={require('../assets/button.png')} />
+    <ButtonContainer src={require('../assets/button2.png')} />
+</ButtonHolder>
+    {/* <Button text="Explore" link="https://google.com" /> */}
+    {/* <img  /> */}
+    {/* </ButtonContainer> */}
     </>
   );
 };

@@ -10,16 +10,16 @@ import "swiper/css/navigation";
 
 import { Pagination, Navigation, Autoplay, EffectCards } from "swiper";
 
-import img1 from '../assets/Nfts/bighead.svg';
-import img2 from '../assets/Nfts/bighead-1.svg';
-import img3 from '../assets/Nfts/bighead-2.svg';
-import img4 from '../assets/Nfts/bighead-3.svg';
-import img5 from '../assets/Nfts/bighead-4.svg';
-import img6 from '../assets/Nfts/bighead-5.svg';
-import img7 from '../assets/Nfts/bighead-6.svg';
-import img8 from '../assets/Nfts/bighead-7.svg';
-import img9 from '../assets/Nfts/bighead-8.svg';
-import img10 from '../assets/Nfts/bighead-9.svg';
+import img1 from '../assets/gamers/ahri_card.png';
+import img2 from '../assets/gamers/akali_card.png';
+import img3 from '../assets/gamers/ashe_card.png';
+import img4 from '../assets/gamers/Champion_Ahri_HP.png';
+import img5 from '../assets/gamers/Champion_ashe_HP.png';
+import img6 from '../assets/gamers/Champion_garen_HP.png';
+import img7 from '../assets/gamers/fortune_card.png';
+import img8 from '../assets/gamers/lux_card.png';
+import img9 from '../assets/gamers/trailer-img.png';
+import img10 from '../assets/gamers/ahri_card.png';
 
 import Arrow from '../assets/Arrow.svg';
 
@@ -51,7 +51,7 @@ height: 70vh;
 }
 
 .swiper-slide{
-    background-color: ${props => props.theme.carouselColor};
+    background-color: ${props => props.theme.body};
 
     border-radius: 20px;
 
@@ -68,7 +68,7 @@ height: 70vh;
 }
 
 .swiper-button-next{
-    color: ${props => props.theme.text};
+    color: ${props => props.theme.textBlack};
     right: 0;
     width: 4rem;
     top: 60%;
@@ -91,7 +91,7 @@ height: 70vh;
     }
 }
 .swiper-button-prev{
-    color: ${props => props.theme.text};
+    color: ${props => props.theme.textBlack};
     left: 0;
     top: 60%;
     width: 4rem;
