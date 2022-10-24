@@ -1,0 +1,21 @@
+.line-entry-content {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 2px;
+  display: flex;
+}
+
+.icons-project-panel-3 {
+  width: 16px;
+  height: 16px;
+  object-fit: cover;
+}
+
+.progress-5 {
+  color: #393939;
+  font-family: Rand;
+  font-size: .75rem;
+  font-weight: 500;
+  line-height: 18px;
+}
