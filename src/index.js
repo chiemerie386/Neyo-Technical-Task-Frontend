@@ -5,7 +5,7 @@ import App from './App';
 // import '../node_modules/normalize.css/normalize.css';
 import { BrowserRouter } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from "react-query"
-import {ReactQueryDevTools} from "react-query/devtools"
+import {ReactQueryDevtools} from "react-query/devtools"
 
 const queryClient = new QueryClient()
 // import reportWebVitals from './reportWebVitals';
@@ -13,12 +13,11 @@ const queryClient = new QueryClient()
 ReactDOM.render(
   <React.StrictMode>
   <QueryClientProvider client = {queryClient}>
-
-  </QueryClientProvider>
-    <BrowserRouter>
+  <BrowserRouter>
     <App />
-    <ReactQueryDevTools initialIsOpen/>
+    <ReactQueryDevtools initialIsOpen/>
     </BrowserRouter>
+  </QueryClientProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,3 +1,7 @@
+html, body {
+  max-width: 100%;
+}
+
 .landing-page {
     color: #5d5d5d;
     width: 100%;
@@ -58,6 +62,14 @@
     font-size: 2rem;
     line-height: 50px;
   }
+
+  .error-message {
+    text-align: center;
+    color: red;
+    margin-bottom: 10px;
+    margin-left: 1px;
+    font-size: 1rem;
+  }
   
   .frame-17 {
     color: #989898;
@@ -76,6 +88,7 @@
     line-height: 16px;
     display: flex;
     padding: 15px;
+    padding: 5px 15px;
   }
   
   .password {
@@ -98,7 +111,7 @@
     font-weight: 400;
     line-height: 16px;
     display: flex;
-    padding: 15px;
+    padding: 5px 15px;
   }
   
   .password-1 {
