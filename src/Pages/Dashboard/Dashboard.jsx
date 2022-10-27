@@ -134,7 +134,7 @@ const SketchDropDown = ({title, createSketch}) => {
   const [activeSketchId, setActiveSketchId] = useState(activeSketch)
 
   const setActiveSketch = (id) =>{
-    console.log(id)
+
     localStorage.setItem("active-sketch-id", id)
     setActiveSketchId(id)
   }
