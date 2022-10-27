@@ -29,32 +29,44 @@ font-size: 1.2rem;
 }
 
 .collaborator{
-  width: 80vw;
-  height: 80vh;
+  width: 78vw;
+  height: 75vh;
   background-color: palegoldenrod;
-  align-self: center;
-  margin-top: 3rem;
+  align-self: flex-start;
+  margin-top: 5rem;
+  margin-left: 10rem;
 }
 .dropdown_container{
   height: fit-content;
   background-color: #FAFAFA;
   border: 1px solid #bdbbbb;
-  position: absolute;
-  width: 16rem;
-  top: 5rem;
-  right: 2rem;
+  position: relative;
+  margin-bottom:15px;
+  width: 18rem;
+}
 
+.side-bar{
+  position: absolute;
+  top: 7rem;
+  right: 2rem;
 }
 .title_div {
   border-bottom: 1px solid #DEDEDE;
   padding-left: 10px;
-  
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
 }
 .title{
   font-weight: 400;
 }
 .sketch-list-items{
   margin: 25px 0px;
-  font-size: 18px;
+  font-size: 15px;
   cursor: pointer;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+}
+
+.list_container{
+  padding:0px 15px
 }

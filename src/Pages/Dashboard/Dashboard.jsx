@@ -4,7 +4,8 @@ import React, { useRef, useEffect, useState } from "react";
 import Modal from '../../Modals/AddSketch/AddSketch'
 import sketchTools from './sketch'
 import { useQuery } from "react-query"
-import {getAll} from "../../api/sketchApi"
+import {getAll} from "../../api/sketchApi";
+import {getAllUsers} from "../../api/userApi"
 
 const {init, app} = sketchTools
 
@@ -127,11 +128,16 @@ const CollaboratorBoard = () => {
   )
 }
 
-const DropDown = ({title, createSketch}) => {
-  const [isOpen, setIsOpen] = useState(false);
-  useEffect(()=>{
-    
-  })
+const SketchDropDown = ({title, createSketch}) => {
+  const activeSketch = localStorage.getItem("active-sketch-id")
+
+  const [activeSketchId, setActiveSketchId] = useState(activeSketch)
+
+  const setActiveSketch = (id) =>{
+    console.log(id)
+    localStorage.setItem("active-sketch-id", id)
+    setActiveSketchId(id)
+  }
 
   const {
     isLoading,
@@ -142,23 +148,50 @@ const DropDown = ({title, createSketch}) => {
     select: data => {
       return(data.data)
     }
-    // select: data => {console.log(data, "lkjh")}
 })
 
   return (
 <div className="dropdown_container">
 <div className="title_div">
-<h3 className="title">{title}</h3>
+<h3 className="title"><b>{title}</b></h3>
 </div>
   <ul className="list_container">
-    {sketches && sketches.sketch.map(val=>{
+    {sketches && sketches.sketch.map((val, id)=>{
       return (
-        <div className="sketch-list-items"> {val.title}</div>
+        <div key={val._id} style={{color:(val._id === activeSketchId) ? "#4F00C1" : ""}} onClick={()=>{setActiveSketch(val._id)}} className="sketch-list-items"> {val.title}</div>
       )
     })}
     <div className="sketch-list-items" onClick={createSketch}>
- + Add new Sketch
+ +   Add new Sketch
     </div>
+  </ul>
+</div>
+  )
+}
+
+const UsersDropDown = ({title}) => {
+  const {
+    isLoading,
+    isError,
+    error,
+    data:users
+} = useQuery('users', getAllUsers, {
+    select: data => {
+      return(data.data)
+    }
+})
+
+  return (
+<div className="dropdown_container">
+<div className="title_div">
+<h3 className="title"><b>{title}</b></h3>
+</div>
+  <ul className="list_container">
+    {users && users.map((user,id)=>{
+      return (
+        <div key={user._id} className="sketch-list-items"> {user.firstName }  {user.lastName}</div>
+      )
+    })}
   </ul>
 </div>
   )
@@ -191,14 +224,14 @@ const Dashboard = () => {
 //   }, []);
   return (
     <div className="canvas">
-    {/* <ModalComp /> */}
-      {/* <button  onClick={() => setIsOpen(true)}>
-        Open Modal
-      </button> */}
       {isOpen && <Modal setIsOpen={setIsOpen} />}
 <Header />
 <CollaboratorBoard />
-<DropDown title='SKETCHES' createSketch ={() => setIsOpen(true)}/>
+<div className="side-bar">
+<SketchDropDown title='SKETCHES' createSketch ={() => setIsOpen(true)}/>
+<UsersDropDown title='USERS' />
+</div>
+
     </div>
   );
 };
