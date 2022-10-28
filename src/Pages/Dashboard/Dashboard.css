@@ -26,15 +26,18 @@ nav {
 margin-right: 10px;
 font-weight: 400;
 font-size: 1.2rem;
+font-family: 'Manrope', sans-serif;
+font-weight: 400;
 }
 
 .collaborator{
-  width: 78vw;
-  height: 75vh;
-  background-color: palegoldenrod;
+  /* width: 78vw;
+  height: 75vh; */
+  /* background-color: palegoldenrod; */
   align-self: flex-start;
   margin-top: 5rem;
   margin-left: 10rem;
+  border: 1px solid black;
 }
 .dropdown_container{
   height: fit-content;
@@ -43,6 +46,7 @@ font-size: 1.2rem;
   position: relative;
   margin-bottom:15px;
   width: 18rem;
+  border-radius: 5px;
 }
 
 .side-bar{
@@ -52,9 +56,12 @@ font-size: 1.2rem;
 }
 .title_div {
   border-bottom: 1px solid #DEDEDE;
-  padding-left: 10px;
+  padding: 0px 10px;
   font-family: 'Manrope', sans-serif;
   font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .title{
   font-weight: 400;
@@ -68,5 +75,57 @@ font-size: 1.2rem;
 }
 
 .list_container{
-  padding:0px 15px
+  padding:0px 15px;
+
+}
+
+.button-box{
+  display: flex;
+  justify-content: space-between;
+  padding: 0rem 2rem
+}
+.save-button{
+  padding: .4rem 1rem ;
+  font-size: 1rem;
+  background-color: #bdbbbb;
+  border-radius: 5px;
+  border: 2px solid black;
+  cursor: pointer;
+}
+.user-color{
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  background-color: #161616;
+  margin-right: 10px;
+}
+.user{
+  display: flex;
+  align-items: center;
+  padding: 0px;
+  margin: 10px 0px;
+
+}
+
+.user-list-items{
+  margin: 8px 0px;
+  font-size: 15px;
+  cursor: pointer;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+}
+
+.dropdown-icon{
+  cursor: pointer;
+}
+
+.file{
+  padding-bottom: 30px ;
+  cursor: pointer;
+}
+
+.profile-picture{
+  width: 30px;
+  height:30px;
+  border-radius: 50%;
 }

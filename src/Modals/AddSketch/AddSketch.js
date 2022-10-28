@@ -8,29 +8,28 @@ import {useNavigate} from 'react-router-dom'
 
 const Modal = ({ setIsOpen }) => {
 
-  const [title, setTitle] = useState(3)
+  const [title, setTitle] = useState("")
+  const [error, setError] = useState("")
+  const [isError, setIsError] = useState(false)
   const queryClient = useQueryClient()
 
-  const loginMutation = useMutation(create, {
+  const createMutation = useMutation(create, {
     onSuccess: (result) => {
       queryClient.invalidateQueries("sketches")
+      setIsOpen(false)
     },
     onError: (result) =>{
-      // setError(result.response.data.message)
-      // setIsError(true)
+      setError(result.response.data.message)
+      setIsError(true)
     }
 })
 const handleCreate = (e) =>{
-  loginMutation.mutate({ title })
-  setIsOpen(false)
-}  
-const handleLogin = (e) => {
-  // if(!email || !password ){
-  //   setError("Please complete all fields")
-  //   setIsError(true)
-  //   return
-  // }
-  loginMutation.mutate({ title })
+  if(!title){
+    setError("Please add a title")
+    setIsError(true)
+    return
+  }
+  createMutation.mutate({ title })
 }
   return (
     <>
@@ -38,12 +37,14 @@ const handleLogin = (e) => {
       <div className="centered">
         <div className="modal">
           <div className="modalHeader" >
-            <h5 className="heading"> Dialog</h5>
+            <h5 className="heading">Create New Sketch</h5>
           </div>
+          <h4 className="error-message">{isError && error}</h4>
           <button className="closeBtn" onClick={() => setIsOpen(false)}>
             <RiCloseLine style={{ marginBottom: "-3px" }} />
           </button>
-         <input type="text" onChange={(e)=>setTitle(e.target.value)}/>
+         
+         <input type="text" className="modal-input" placeholder="Sketch Title" onChange={(e)=>setTitle(e.target.value)}/>
           <div className="modalActions" >
             <div className="actionsContainer">
               <button className="createBtn" onClick={handleCreate}>

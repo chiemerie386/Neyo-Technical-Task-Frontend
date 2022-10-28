@@ -4,10 +4,13 @@ import frame14 from "../frame14.svg"
 import { useMutation} from "react-query"
 import {useNavigate} from 'react-router-dom'
 import {login} from "../../api/authApi"
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { Context } from '../../reducer';
 
 
-function Login() {
+function Login({set}) {
+  const { setUserColour, userColour} = useContext(Context);
+
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -18,7 +21,15 @@ function Login() {
     onSuccess: (result) => {
       if(result.data && result.data.token){
         localStorage.setItem('token', result.data.token);
-        navigate('/');
+        const name = `${result.data.user.firstName} ${result.data.user.lastName}`
+        const colour = `#${result.data.user.colour}`
+        const image = `#${result.data.user.image}`
+        localStorage.setItem('name', name);
+        localStorage.setItem('colour', colour);
+        localStorage.setItem('image', image);
+        setUserColour(colour)
+        set(true)
+        navigate('/dashboard');
       }
 
     },

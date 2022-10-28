@@ -17,6 +17,18 @@ export const create = async (createPayload) => {
 export const getAll = async (getAllPayload) => {
     const response =  await sketchApi.get('/sketch/getsketch', headers)
     return response.data
- } 
+}
+
+export const getOne = async (sketchId) => {
+  const response =  await sketchApi.get(`sketch/getsketch/${sketchId}`, headers)
+  // console.log("response.data", response.data, sketchId)
+  return response.data
+}
+
+export const updateSketch = async (updateSketchPayload) => {
+  const {body, sketchId} = updateSketchPayload
+  const response =  await sketchApi.put(`/sketch/update/${sketchId}`, {body}, headers)
+  return response.data
+} 
 
 export default  sketchApi

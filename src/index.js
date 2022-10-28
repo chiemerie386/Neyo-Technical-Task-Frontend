@@ -1,23 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import './index.css';
 import App from './App';
-// import '../node_modules/normalize.css/normalize.css';
 import { BrowserRouter } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from "react-query"
 import {ReactQueryDevtools} from "react-query/devtools"
+import { AppContextProvider } from './reducer';
 
 const queryClient = new QueryClient()
 // import reportWebVitals from './reportWebVitals';
-
+const twentyFourHoursInMs = 1000 * 60 * 60 * 24;
+// const queryClient = new QueryClient({
+//     defaultOptions: {
+//       queries: {
+//         refetchOnWindowFocus: true,
+//         refetchOnmount: true,
+//         refetchOnReconnect: false,
+//         retry: false,
+//         staleTime: twentyFourHoursInMs,
+//       },
+//     },
+//   });
 ReactDOM.render(
   <React.StrictMode>
-  <QueryClientProvider client = {queryClient}>
-  <BrowserRouter>
-    <App />
-    <ReactQueryDevtools initialIsOpen/>
-    </BrowserRouter>
-  </QueryClientProvider>
+    <AppContextProvider>
+      <QueryClientProvider client = {queryClient}>
+        <BrowserRouter>
+          <App />
+          <ReactQueryDevtools initialIsOpen/>
+        </BrowserRouter>
+      </QueryClientProvider>
+    </AppContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
