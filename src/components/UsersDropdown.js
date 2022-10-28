@@ -9,9 +9,6 @@ import {getAllUsers} from "../api/userApi"
 const UsersDropDown = ({title}) => {
     const [open, setOpen] = useState(false)
     const {
-      isLoading,
-      isError,
-      error,
       data:users
   } = useQuery('users', getAllUsers, {
       select: data => {

@@ -1,12 +1,7 @@
-// import "./Dashboard.css";
-import React, { useState, useContext, useEffect } from "react";
-// import { useQuery } from "react-query"
-// import {getAll,} from "../api/sketchApi";
-import sketchTools from '../utils/sketch'
+import React, { useState, useContext } from "react";
 import { Context } from '../reducer';
-import { useQuery, useMutation, useQueryClient, QueryClient} from "react-query"
+import { useQuery} from "react-query"
 import { getOne, getAll} from "../api/sketchApi";
-const {init, app} = sketchTools
 
 const SketchDropDown = ({title, createSketch}) => {
     const { activeSketch, setActiveSketch, setActiveSketchBody} = useContext(Context);

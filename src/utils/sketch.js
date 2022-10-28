@@ -1,17 +1,10 @@
 
-import SpritePool from '../Pages/Dashboard/SpritePool';
-import BrushGenerator from '../Pages/Dashboard/BrushGenerator';
-import * as dat from 'dat.gui';
+import SpritePool from './SpritePool';
+import BrushGenerator from './BrushGenerator';
 import * as PIXI from 'pixi.js';
 
 
-
-// const gui = new dat.GUI();
-
-
 const app = new PIXI.Application({
-  // width: window.innerWidth*0.7 ,
-  // height: window.innerHeight/1.2,
   width:1000,
   height:600,
   backgroundColor: 0xffffff,
@@ -19,7 +12,6 @@ const app = new PIXI.Application({
 
 const drawBuffer = new PIXI.Container();
 const renderTexture = PIXI.RenderTexture.create({ width: 1024, height: 1024 });
-// const renderTexture = PIXI.RenderTexture.create({ width: 200, height: 200 });
 
 const spritePool = new SpritePool();
 const brushGenerator = new BrushGenerator(app.renderer);
@@ -35,10 +27,7 @@ const guiParams = {
   brushSmoothing: 0.2,
   useEraser: false,
 };
-  console.log(window.innerHeight, "window.innerHeight", window.innerWidth, " window.innerHeight", app.screen.height)
   const frameSprite = new PIXI.Sprite(
-    // PIXI.Texture.from('data:image/jpeg;base64,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')
-    // PIXI.Texture.from('https://i.imgur.com/MA56x4i.png')
     PIXI.Texture.from(sketchBody || 'https://res.cloudinary.com/eftd/image/upload/v1666886918/download-11_bnqxdf.jpg')
   )
   frameSprite.anchor.set(0.5);
@@ -109,7 +98,6 @@ function drawPoint(x, y, guiParams) {
   } else {
     sprite.blendMode = PIXI.BLEND_MODES.NORMAL;
   }
-  // console.log(sprite, "sprie", drawBuffer, "draw", app.view)
 
   drawBuffer.addChild(sprite);
 }
@@ -152,6 +140,5 @@ function renderPoints() {
   drawBuffer.children = [];
   spritePool.reset();
 }
-
-
-export default {init, app};
+const sketch = {init, app}
+export default sketch;

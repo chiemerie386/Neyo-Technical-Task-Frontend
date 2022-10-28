@@ -11,13 +11,17 @@ function App() {
   return (
     <main>  
       <Routes>
-      {/* <Route path="/" element={<Dashboard />} />
-      <Route path="/login" element={<Login />} /> */}
       <Route path="login" element={<Login set={setisLoggedIn} />} />
+      {/* <Route path="dashboard" element={<Login set={setisLoggedIn} />} /> */}
       <Route path="register" element={
         <Register set={setisLoggedIn} />
         } />
       <Route path="dashboard" element={
+          <Protected isLoggedIn= {isLoggedIn}>
+            <Dashboard set={setisLoggedIn}/>
+          </Protected>
+        } />
+              <Route path="" element={
           <Protected isLoggedIn= {isLoggedIn}>
             <Dashboard set={setisLoggedIn}/>
           </Protected>

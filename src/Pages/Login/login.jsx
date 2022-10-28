@@ -7,9 +7,8 @@ import {login} from "../../api/authApi"
 import { useState, useContext } from "react"
 import { Context } from '../../reducer';
 
-
 function Login({set}) {
-  const { setUserColour, userColour} = useContext(Context);
+  const { setUserColour} = useContext(Context);
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -23,7 +22,7 @@ function Login({set}) {
         localStorage.setItem('token', result.data.token);
         const name = `${result.data.user.firstName} ${result.data.user.lastName}`
         const colour = `#${result.data.user.colour}`
-        const image = `#${result.data.user.image}`
+        const image = `${result.data.user.image}`
         localStorage.setItem('name', name);
         localStorage.setItem('colour', colour);
         localStorage.setItem('image', image);
@@ -31,7 +30,6 @@ function Login({set}) {
         set(true)
         navigate('/dashboard');
       }
-
     },
     onError: (result) =>{
       setError(result.response.data.message)
@@ -50,7 +48,6 @@ const handleLogin = (e) => {
     <main>
  <div className="landing-page">
       <div className="navigation-horizont">
-        {/* <img className="frame-99" src={frame99} /> */}
         <div className="frame-95" />
         <div className="container" />
       </div>
@@ -70,7 +67,7 @@ const handleLogin = (e) => {
       <span className="or">or</span>
       <div className="group-406">
         <div className="rectangle-1910">
-          <img className="frame-14" src={frame14} />
+          <img className="frame-14" src={frame14} alt="google" />
           <span className="log-in-with-google">Log in with Google</span>
         </div>
       </div>

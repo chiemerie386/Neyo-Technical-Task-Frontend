@@ -1,9 +1,7 @@
 // import "./Dashboard.css";
 // import Profile from "./assets/Profile.png"
-import React, { useRef, useEffect, useState,  useContext } from "react";
+import React, { useRef, useEffect,  useContext } from "react";
 import sketchTools from '../utils/sketch'
-import { useQuery, useMutation, useQueryClient, QueryClient} from "react-query"
-import { getOne, getAll} from "../api/sketchApi";
 import { Context } from '../reducer';
 const {init, app} = sketchTools
 

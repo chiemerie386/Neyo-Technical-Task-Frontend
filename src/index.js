@@ -7,26 +7,13 @@ import {ReactQueryDevtools} from "react-query/devtools"
 import { AppContextProvider } from './reducer';
 
 const queryClient = new QueryClient()
-// import reportWebVitals from './reportWebVitals';
-const twentyFourHoursInMs = 1000 * 60 * 60 * 24;
-// const queryClient = new QueryClient({
-//     defaultOptions: {
-//       queries: {
-//         refetchOnWindowFocus: true,
-//         refetchOnmount: true,
-//         refetchOnReconnect: false,
-//         retry: false,
-//         staleTime: twentyFourHoursInMs,
-//       },
-//     },
-//   });
 ReactDOM.render(
   <React.StrictMode>
     <AppContextProvider>
       <QueryClientProvider client = {queryClient}>
         <BrowserRouter>
           <App />
-          <ReactQueryDevtools initialIsOpen/>
+          {/* <ReactQueryDevtools initialIsOpen/> */}
         </BrowserRouter>
       </QueryClientProvider>
     </AppContextProvider>

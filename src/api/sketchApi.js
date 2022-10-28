@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const sketchApi = axios.create({
-    baseURL : "http://localhost:4000"
+    baseURL : process.env.REACT_APP_API_URL
 })
 
 const token = localStorage.getItem('token');
@@ -21,7 +21,6 @@ export const getAll = async (getAllPayload) => {
 
 export const getOne = async (sketchId) => {
   const response =  await sketchApi.get(`sketch/getsketch/${sketchId}`, headers)
-  // console.log("response.data", response.data, sketchId)
   return response.data
 }
 

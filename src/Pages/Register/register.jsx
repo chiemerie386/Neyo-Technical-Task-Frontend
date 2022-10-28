@@ -6,13 +6,14 @@ import { Context } from '../../reducer';
 import {useNavigate} from 'react-router-dom'
 
 function Register({set}) {
-  const { setUserColour, userColour} = useContext(Context);
+  const { setUserColour} = useContext(Context);
 
   const [email, setEmail] = useState('')
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastname] = useState('')
   const [password, setPassword] = useState('')
   const [image, setImage] = useState('')
+  const [url, setUrl] = useState('https://res.cloudinary.com/eftd/image/upload/v1666953450/default-avatar-photo-placeholder-profile-icon-eps-file-easy-to-edit-default-avatar-photo-placeholder-profile-icon-124557887_xdloyg.jpg')
   const [error, setError] = useState('')
   const [isError, setIsError] = useState(true)
   let navigate = useNavigate(); 
@@ -25,7 +26,7 @@ function Register({set}) {
         set(true)
         const name = `${result.data.user.firstName} ${result.data.user.lastName}`
         const colour = `#${result.data.user.colour}`
-        const image = `#${result.data.user.image}`
+        const image = `${result.data.user.image}`
         localStorage.setItem('name', name);
         localStorage.setItem('colour', colour);
         localStorage.setItem('image', image);
@@ -38,44 +39,38 @@ function Register({set}) {
       setIsError(true)
     }
 })
-const handleRegister = (e) => {
+const handleRegister = async(e) => {
   if(!email || !password || !firstName || !lastName){
     setError("Please complete all fields")
     setIsError(true)
     return
   }
-  registerMutation.mutate({ email, password, firstName, lastName, image })
+   await uploadImage(image)
+  registerMutation.mutate({ email, password, firstName, lastName, image:url })
 }
 
 const handelUpload = async(event)=>{
-
     const file = event.target.files[0]
-    console.log(file, "uig")
-   let {url} = await uploadImage(file)
-   setImage(url)
-   console.log(url, 1)
+   setImage(file)
 }
 
 
 const uploadImage = async(image) => {
-  const data = new FormData()
-  data.append("file", image)
-  data.append("upload_preset", "neyo_sketches")
-  data.append("cloud_name","breellz")
-  const up = await fetch("  https://api.cloudinary.com/v1_1/eftd/image/upload",{
-  method:"post",
-  body: data
-  })
-return up
-  // .then(resp => resp.json())
-  // .then(data => {
-  //   console.log(data.url, 2)
-  //   return data.url
-  //   // updateMutation.mutate({ sketchId:activeSketch, body:data.url })
-  //   // setActiveSketchBody(data.url)
-  // })
-  // .catch(err => console.log(err, "hjg"))
+    const data = new FormData()
+    data.append("file", image)
+    data.append("upload_preset", "neyo_sketches")
+    data.append("cloud_name","breellz")
+  fetch("https://api.cloudinary.com/v1_1/eftd/image/upload",{
+    method:"post",
+    body: data
+    })
+  .then(resp => resp.json())
+    .then(data => {
+      setUrl(data.url)
+    })
+    .catch(err => console.log(err, "hjg"))
 }
+
   return (
     <main>
  <div className="landing-page">
@@ -91,7 +86,7 @@ return up
       <input type='text' placeholder="Last Name" onChange={(e)=>setLastname(e.target.value)} className="frame-17 password" />
       <input type='text' placeholder="Email" onChange={(e)=>setEmail(e.target.value)} className="frame-17 password" />
       <input type='password' placeholder="Password" onChange={(e)=>setPassword(e.target.value)} className="frame-18 password-1" />
-      <input  type="file" onClick={handelUpload} className="file" title= " lk"  accept="image/*" placeholder="image" />
+      <input  type="file" onClick={handelUpload} className="file" accept="image/*" placeholder="image" />
 
       <div className=" button" onClick={handleRegister}>
         <span className="enter-canvas">Sign up</span>

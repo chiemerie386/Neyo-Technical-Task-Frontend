@@ -1,13 +1,11 @@
 import "./Dashboard.css";
-import Profile from "./assets/Profile.png"
-import React, { useRef, useEffect, useState, useContext } from "react";
+import React, {useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Modal from '../../Modals/AddSketch/AddSketch'
 import sketchTools from '../../utils/sketch'
 import { Context } from '../../reducer';
-import { useQuery, useMutation, useQueryClient} from "react-query"
-import {getAll, updateSketch, getOne} from "../../api/sketchApi";
-import {getAllUsers} from "../../api/userApi"
+import { useMutation, useQueryClient} from "react-query"
+import { updateSketch} from "../../api/sketchApi";
 import SketchDropDown from "../../components/SketchDropdown"
 import UsersDropDown from "../../components/UsersDropdown"
 import CollaboratorBoard from "../../components/CollaboratorBoard"
@@ -15,15 +13,14 @@ import Header from "../../components/Header";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const {init, app} = sketchTools
+const {app} = sketchTools
 
 
 
 const Dashboard = () => {
-  const { activeSketch, setActiveSketch, setActiveSketchBody} = useContext(Context);
+  const { activeSketch, setActiveSketchBody} = useContext(Context);
   const queryClient = useQueryClient()
   const [isOpen, setIsOpen] = useState(false);
-  const [ url, setUrl ] = useState("");
 
   const navigate = useNavigate()
 

@@ -72,7 +72,7 @@ html, body {
   }
   
   .frame-17 {
-    color: #989898;
+    color: #040404;
     width: 25%;
     border: 1px solid #9f9f9f;
     border-radius: 3px;
@@ -96,7 +96,7 @@ html, body {
   }
   
   .frame-18 {
-    color: #989898;
+    color: #010101;
     width: 25%;
     border: 1px solid #afafaf;
     border-radius: 3px;
@@ -156,7 +156,7 @@ html, body {
     color: #4f00c1;
     margin-bottom: 24px;
     margin-left: 1px;
-    font-size: .75rem;
+    font-size: 1rem;
     cursor: pointer;
   }
   
